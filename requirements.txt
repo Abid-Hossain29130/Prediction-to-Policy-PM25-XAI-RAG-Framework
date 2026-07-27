@@ -1,0 +1,17 @@
+xgboost>=1.7.0
+scikit-learn
+shap
+lime
+statsmodels
+scipy
+geopandas
+folium
+shapely
+mapclassify
+chromadb
+langchain
+sentence-transformers
+groq
+pandas
+numpy
+matplotlib

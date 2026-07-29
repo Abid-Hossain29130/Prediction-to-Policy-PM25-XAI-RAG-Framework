@@ -399,7 +399,7 @@ YOUR RESPONSE:
 """
         chat = self.groq_client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
-            model="openai/gpt-oss-120b",
+            model=os.getenv("GROQ_GENERATOR_MODEL", "openai/gpt-oss-120b"),
             temperature=0.0,
             seed=42
         )
@@ -1030,7 +1030,7 @@ For gaps, cite WHO AQG 2021 or India GRAP as international reference.
 
     response = groq_client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
-        model="openai/gpt-oss-120b",
+        model=os.getenv("GROQ_GENERATOR_MODEL", "openai/gpt-oss-120b"),
         temperature=0.0,
         seed=42,
         max_tokens=2500
@@ -1253,7 +1253,7 @@ def call_judge(prompt: str) -> dict:
         try:
             response = groq_client.chat.completions.create(
                 messages=[{"role": "user", "content": prompt}],
-                model="llama-3.3-70b-versatile",
+                model=os.getenv("GROQ_JUDGE_MODEL", "llama-3.3-70b-versatile"),
                 temperature=0.0,
                 seed=42,
                 max_tokens=512,

@@ -13,15 +13,15 @@ This repository contains the complete source code, datasets, execution environme
 
 ## 📑 Contents
 
-- [Framework Overview and Performance](#-framework-overview-and-performance)
-- [Repository Structure](#-repository-structure)
-- [Quick Start and Reproducibility](#-quick-start-and-reproducibility)
-- [Citation](#-citation)
-- [License](#-license)
+- [Framework Overview and Performance](#framework-overview-and-performance)
+- [Repository Structure](#repository-structure)
+- [Quick Start and Reproducibility](#quick-start-and-reproducibility)
+- [Citation](#citation)
+- [License](#license)
 
 ---
 
-## 📌 Framework Overview and Performance
+## <a name="framework-overview-and-performance"></a>📌 Framework Overview and Performance
 
 Urban air quality management in data-constrained megacities faces a trilemma between predictive accuracy, physical interpretability, and actionable policy translation. This framework addresses this challenge through a unified, end-to-end decision-support pipeline.
 
@@ -68,7 +68,7 @@ The complete end-to-end inference pipeline executes in **under 4 seconds** on a 
 
 ---
 
-## 📁 Repository Structure
+## <a name="repository-structure"></a>📁 Repository Structure
 
 ```text
 Prediction-to-Policy-PM25-XAI-RAG-Framework
@@ -111,10 +111,13 @@ Prediction-to-Policy-PM25-XAI-RAG-Framework
 ```
 
 ---
+
 ## 🤖 Pipeline Architecture & API Reproducibility Guide
 
 ### Two-Stage LLM Framework
+
 The RAG policy module (`src/grap_environmental_advisory_rag.py` / `notebooks/`) operates via a two-stage LLM workflow:
+
 1. **Primary Generator (GPT-OSS):** Synthesises spatial risk maps and XGBoost forecasts into legally grounded Environmental Action/Advisory Briefs (EAABs).
 2. **Evaluator / LLM-as-a-Judge (Llama):** Conducts automated, multi-criteria expert scoring and diagnostic quality auditing of the generated briefs.
 
@@ -127,9 +130,11 @@ The RAG policy module (`src/grap_environmental_advisory_rag.py` / `notebooks/`) 
 * **Handling Third-Party Model String Updates:**
   Third-party API providers periodically update, rename, or retire specific model string endpoints. If an API call returns a `400 Bad Request` or `404 Model Not Found` error during local execution:
   1. Check your provider's current active model registry (e.g., Groq Console or OpenAI Docs).
-  2. Update the environment variables or script configuration parameters (`GENERATOR_MODEL_NAME` and `JUDGE_MODEL_NAME`) to point to the current active equivalents (e.g., `llama-3.3-70b-versatile`).
+  2. Update the environment variables (`GROQ_GENERATOR_MODEL` and `GROQ_JUDGE_MODEL`) to point to the current active equivalents (e.g., `llama-3.3-70b-versatile`).
+
 ---
-## ⚙️ Quick Start and Reproducibility
+
+## <a name="quick-start-and-reproducibility"></a>⚙️ Quick Start and Reproducibility
 
 To ensure strict open-science reproducibility, all stochastic operations are globally fixed:
 
@@ -184,12 +189,6 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-#### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
 #### 4. Configure Environment Variables
 
 Rename:
@@ -208,7 +207,11 @@ and insert your own:
 
 ```text
 GROQ_API_KEY=your_api_key_here
+GROQ_GENERATOR_MODEL=openai/gpt-oss-120b
+GROQ_JUDGE_MODEL=llama-3.3-70b-versatile
 ```
+
+> **Note on Model Configuration:** By default, the framework uses the anonymized model names from the paper (`openai/gpt-oss-120b` for generating advisories and `llama-3.3-70b-versatile` for judging). To run the pipeline successfully on standard Groq API models, you can override these defaults by setting the `GROQ_GENERATOR_MODEL` (e.g. `llama3-70b-8192`) and `GROQ_JUDGE_MODEL` variables in your environment.
 
 > **Security Note:** API keys are intentionally excluded from version control and remain strictly local.
 
@@ -218,7 +221,7 @@ Run the backend modules inside the `src/` directory or execute the interactive n
 
 ---
 
-## 📝 Citation
+## <a name="citation"></a>📝 Citation
 
 If you use this repository in academic research, please cite the accompanying manuscript:
 
@@ -235,7 +238,7 @@ If you use this repository in academic research, please cite the accompanying ma
 
 ---
 
-## 📜 License
+## <a name="license"></a>📜 License
 
 This project is distributed under the terms of the **MIT License**.
 

@@ -111,7 +111,24 @@ Prediction-to-Policy-PM25-XAI-RAG-Framework
 ```
 
 ---
+## 🤖 Pipeline Architecture & API Reproducibility Guide
 
+### Two-Stage LLM Framework
+The RAG policy module (`src/grap_environmental_advisory_rag.py` / `notebooks/`) operates via a two-stage LLM workflow:
+1. **Primary Generator (GPT-OSS):** Synthesises spatial risk maps and XGBoost forecasts into legally grounded Environmental Action/Advisory Briefs (EAABs).
+2. **Evaluator / LLM-as-a-Judge (Llama):** Conducts automated, multi-criteria expert scoring and diagnostic quality auditing of the generated briefs.
+
+---
+
+### ⚠️ External API Execution & Endpoint Configuration
+
+* **Pre-Computed Notebook States:** All generated EAAB advisories, RAGAS-proxy diagnostic logs (`EAAB_eval_diagnostics.json`), and LLM-as-a-Judge evaluation matrices are pre-rendered and saved inside the submitted notebooks. Reviewers can inspect all outputs directly on GitHub without re-executing code.
+* **API Key Setup:** To execute the pipeline locally, rename `.env.example` to `.env` and supply your `GROQ_API_KEY` (or OpenAI credentials).
+* **Handling Third-Party Model String Updates:**
+  Third-party API providers periodically update, rename, or retire specific model string endpoints. If an API call returns a `400 Bad Request` or `404 Model Not Found` error during local execution:
+  1. Check your provider's current active model registry (e.g., Groq Console or OpenAI Docs).
+  2. Update the environment variables or script configuration parameters (`GENERATOR_MODEL_NAME` and `JUDGE_MODEL_NAME`) to point to the current active equivalents (e.g., `llama-3.3-70b-versatile`).
+---
 ## ⚙️ Quick Start and Reproducibility
 
 To ensure strict open-science reproducibility, all stochastic operations are globally fixed:

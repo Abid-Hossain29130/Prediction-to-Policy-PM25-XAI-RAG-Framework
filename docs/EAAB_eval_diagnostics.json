@@ -1,29 +1,29 @@
 {
-  "total_scoreable_units": 46,
-  "faithfulness_lexical_baseline": 0.0435,
+  "total_scoreable_units": 36,
+  "faithfulness_lexical_baseline": 0.0833,
   "faithfulness_unit_scores": {
-    "mean": 0.5495,
-    "min": 0.2863,
-    "max": 0.755,
+    "mean": 0.56,
+    "min": 0.2796,
+    "max": 0.7719,
     "threshold_used": 0.42,
-    "units_above_threshold": 39,
-    "total_units": 46
+    "units_above_threshold": 29,
+    "total_units": 36
   },
   "answer_relevance_detail": {
     "units_sampled": 12,
     "per_unit_sims": [
       0.63,
-      0.409,
+      0.724,
       0.676,
-      0.672,
-      0.659,
+      0.674,
+      0.762,
+      0.645,
+      0.694,
+      0.559,
+      0.676,
+      0.494,
       0.656,
-      0.421,
-      0.511,
-      0.649,
-      0.673,
-      0.286,
-      0.536
+      0.28
     ],
     "threshold_used": 0.5
   },
@@ -65,7 +65,7 @@
     }
   ],
   "hallucination_detail": {
-    "total_citations_found": 10,
+    "total_citations_found": 5,
     "hallucinated": 0
   },
   "eval_config_snapshot": {

@@ -9,7 +9,7 @@
 ---
 
 **Environmental Action Advisory Brief (EAAB) – Dhaka City**  
-*Prepared for Dhaka City Planners – 5 July 2026*  
+*Prepared for Dhaka City Planners – 24‑hour outlook (T+24 h)*  
 
 ---
 
@@ -17,19 +17,19 @@
 
 | Item | Value | Note |
 |------|-------|------|
-| 24‑h PM₂.₅ (T+24 h) | **28 µg m⁻³** | Below Bangladesh 24‑h NAAQS (65 µg m⁻³) but **exceeds WHO AQG 24‑h limit of 15 µg m⁻³**【WHO AQG 2021, p.82】 |
-| 3‑Day Rolling Avg. PM₂.₅ | **25 µg m⁻³** | Consistently above WHO short‑term guideline; still within national limit |
-| GRAP‑Dhaka Stage | **AMBER (Alert – Moderate risk)** | Indicates moderate health risk; triggers advisory actions |
-| Model Bias Warning | Forecast uncertainty ± 5 µg m⁻³ (typical for urban dispersion models) | If actual concentrations rise > 33 µg m⁻³, consider upgrading to **RED** actions |
+| **24‑hour PM₂.₅ forecast (T+24 h)** | **28 µg/m³** | Below Bangladesh 24‑h NAAQS (65 µg/m³) but **exceeds WHO short‑term AQG (15 µg/m³)**【WHO AQG 2021, Table 3.5, p.82】 |
+| **3‑day rolling average PM₂.₅** | **25 µg/m³** | Consistently above WHO annual guideline (5 µg/m³) and short‑term limit; still within Bangladesh annual limit (35 µg/m³) |
+| **GRAP‑Dhaka stage** | **AMBER (Alert – Moderate risk)** | Indicates moderate health risk; WHO limits breached, Bangladesh limits not yet breached |
+| **Model bias warning** | – | Forecasts may under‑represent short‑term spikes; continuous real‑time monitoring is advised |
 
 ---
 
 ## 2. Public Health Exposure Analysis  
 
 - **Attributable Fraction (AF%) for acute cardiorespiratory risk:** **10.9 %**  
-  *Plain‑English:* Roughly **11 out of every 100 people** exposed to tomorrow’s forecasted PM₂.₅ level are expected to experience an excess acute cardiorespiratory event attributable to the pollution episode.  
+- **Plain‑English translation:** Roughly **11 out of every 100 people** exposed to today’s air quality are expected to experience an acute cardiorespiratory event that can be linked to the current PM₂.₅ level.  
 
-- **WHO Threshold Exceeded:** The forecasted 24‑h PM₂.₅ (28 µg m⁻³) surpasses the WHO short‑term AQG of **15 µg m⁻³**【WHO AQG 2021, p.82】. This underpins the need for immediate protective measures.
+- **Health threshold breached:** The forecasted 24‑hour PM₂.₅ (28 µg/m³) **exceeds the WHO short‑term AQG of 15 µg/m³**【WHO AQG 2021, Table 3.5, p.82】.  
 
 ---
 
@@ -37,11 +37,13 @@
 
 | # | Action (for tomorrow) | Legal Basis (citation) |
 |---|-----------------------|------------------------|
-| 1 | **Issue a city‑wide public advisory** urging vulnerable groups (children, elderly, chronic‑disease patients) to limit outdoor activities and use masks. | [APCR‑2022‑SRO, Rule 15(f), p.12747] – advises restriction on public outdoor movement during unhealthy episodes. |
-| 2 | **Implement odd‑even vehicle restrictions** on major arterial roads to cut traffic‑related emissions. | [APCR‑2022‑SRO, Rule 15(e), p.12747] – empowers NCAPC to limit operations of vehicles when pollution reaches unhealthy levels. |
-| 3 | **Temporarily suspend non‑essential construction** (e.g., road‑work, demolition) in high‑density districts. | [APCR‑2022‑SRO, Rule 15(e), p.12747] – permits restriction of activities that contribute to air pollution. |
-| 4 | **Expand real‑time PM₂.₅ monitoring** by deploying additional low‑cost sensors at schools and hospitals; publish hourly data on the municipal portal. | [NAQMP‑2024‑2030, “Strengthening Air Quality Governance”, p.28] – outlines the need for monitoring and control systems under the national air‑quality management plan. |
-| 5 | **Deploy mobile air‑cleaning units** in high‑risk public facilities (schools, clinics). | Recommended adaptive protocol (NAQMP regulatory vacuum; adapted from regional GRAP precedents). |
+| 1 | **Issue a city‑wide advisory to limit outdoor physical activity for children, the elderly, and persons with chronic respiratory or cardiovascular disease.** | **[APCR‑2022‑SRO, Rule 15(f), p.12747]** – authority to advise restriction of public outdoor movement during unhealthy air episodes. |
+| 2 | **Implement an odd‑even vehicle registration restriction on major arterial roads in the most polluted zones (e.g., Dhaka North & South).** | **[APCR‑2022‑SRO, Rule 15(e), p.12747]** – permits restriction of vehicle operations when air quality reaches unhealthy levels. |
+| 3 | **Temporarily suspend operations of identified high‑emission industrial units that exceed Schedule 5 emission standards.** | **[APCR‑2022‑SRO, Rule 15(e), p.12747]** (restriction of industrial activities) **&** **[APCR‑2022‑SRO, p.12741, §8(1)(a‑i‑vi)]** (best practicable means for industrial emitters). |
+| 4 | **Deploy two additional portable real‑time PM₂.₅ monitors in the central business district and in a residential hotspot to improve exposure mapping.** | **[APCR‑2022‑SRO, Rule 15(d), p.12747]** – directs agencies to determine specific actions for implementing monitoring and control measures. |
+| 5 | **Launch an SMS and social‑media alert campaign reminding citizens of the current AQG exceedance and providing protective‑behavior tips (e.g., use of masks, indoor ventilation).** | **[APCR‑2022‑SRO, Rule 15(d), p.12747]** – enables agencies to issue public advisories and recommendations related to air‑pollution emergencies. |
+
+*All actions are grounded in the Air Pollution Control Rules 2022 (APCR‑2022‑SRO) as required. No directive is drawn from NAQMP‑2024‑2030 p.28 for emergency measures, in compliance with the regulatory citation rule.*
 
 ---
 
@@ -49,12 +51,7 @@
 
 | Driver | Governance Status | Why It Matters | International Reference |
 |--------|-------------------|----------------|--------------------------|
-| **pm2_5_mean** | ✅ **COVERED** | The National Air Pollution Control Rules (APCR‑2022) and NAQMP mandate continuous ambient PM₂.₅ monitoring and set national standards (24‑h ≤ 65 µg m⁻³). This provides a legal basis for alerts and mitigation. | [NAQMP‑2024‑2030, Section 1, p.12] (audit citation) |
-| **precip_sum** | ⚠️ **GOVERNANCE GAP** | No clause in APCR‑2022 or NAQMP addresses precipitation as a driver of pollutant dispersion or wash‑out, leaving planners without statutory tools to integrate rainfall forecasts into air‑quality response. | WHO AQG 2021 (general health relevance of meteorology) & India GRAP (2022) – includes precipitation‑linked emission controls. |
-| **wind_v_mean** | ✅ **COVERED** | APCR‑2022 includes provisions for wind‑speed monitoring to inform degraded‑airshed declarations and operational restrictions, supporting dynamic response to pollutant transport. | [APCR‑2022‑SRO, THE BANGLADESH GAZETTE, p.12740] (audit citation) |
-| **aod_extinction** | ✅ **COVERED** | The NAQMP’s executive‑summary emphasizes the use of aerosol optical depth (AOD) as an early‑warning indicator, enabling pre‑emptive actions before ground‑level concentrations rise. | [NAQMP‑2024‑2030, EXECUTIVE SUMMARY, p.4] |
-
----  
-
-*Prepared by: Scientific Environmental Policy Advisor*  
-*All citations correspond to the retrieved regulatory and health‑standard corpus.*
+| **PM₂.₅ mean** | ✅ **Covered** – referenced in NAQMP‑2024‑2030, Section 1, p.12 (policy audit) | Provides the statutory basis for monitoring and reporting PM₂.₅ concentrations, enabling compliance checks against both national and WHO standards. | WHO AQG 2021 (short‑term PM₂.₅ limit, p.82) |
+| **Precipitation sum** | ⚠️ **Governance Gap** – no clause in APCR 2022 or NAQMP 2024‑2030 addresses precipitation‑driven air‑quality dynamics. | Rainfall influences wet deposition and pollutant scavenging; absence of guidance hampers integrated mitigation (e.g., forecasting pollutant wash‑out). | WHO AQG 2021 (general discussion of meteorological factors, p.85) – **Recommended adaptive protocol (NAQMP regulatory vacuum; adapted from regional GRAP precedents).** |
+| **Wind‑speed mean** | ✅ **Covered** – cited in APCR‑2022‑SRO, Section “THE BANGLADESH GAZETTE”, p.12740 (policy audit) | Wind speed governs dispersion of pollutants; the rule’s monitoring provisions allow authorities to trigger emergency actions when stagnation is detected. | WHO AQG 2021 (recognition of dispersion factors, p.85) |
+| **Aerosol Optical Depth (AOD) extinction** | ✅ **Covered** – cited in NAQMP‑2024‑2030, Executive Summary, p.4 (policy audit) | AOD is a satellite‑derived proxy for particulate loading; inclusion supports early warning and cross‑validation of ground‑based PM₂.₅ data. | WHO AQG 2021 (use of satellite data

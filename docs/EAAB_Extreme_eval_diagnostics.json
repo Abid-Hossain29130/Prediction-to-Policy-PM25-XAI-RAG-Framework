@@ -1,29 +1,29 @@
 {
-  "total_scoreable_units": 49,
-  "faithfulness_lexical_baseline": 0.0408,
+  "total_scoreable_units": 54,
+  "faithfulness_lexical_baseline": 0.0185,
   "faithfulness_unit_scores": {
-    "mean": 0.5645,
-    "min": 0.3155,
-    "max": 0.753,
+    "mean": 0.5383,
+    "min": 0.3123,
+    "max": 0.84,
     "threshold_used": 0.42,
-    "units_above_threshold": 45,
-    "total_units": 49
+    "units_above_threshold": 46,
+    "total_units": 54
   },
   "answer_relevance_detail": {
     "units_sampled": 12,
     "per_unit_sims": [
-      0.619,
-      0.5,
-      0.668,
-      0.667,
-      0.753,
-      0.613,
-      0.316,
-      0.53,
-      0.511,
-      0.44,
-      0.462,
-      0.572
+      0.711,
+      0.456,
+      0.498,
+      0.679,
+      0.616,
+      0.72,
+      0.504,
+      0.397,
+      0.569,
+      0.518,
+      0.575,
+      0.661
     ],
     "threshold_used": 0.5
   },
@@ -64,6 +64,10 @@
       "method": "source_label"
     }
   ],
+  "hallucination_detail": {
+    "total_citations_found": 4,
+    "hallucinated": 0
+  },
   "eval_config_snapshot": {
     "embedding_model": "all-MiniLM-L6-v2 (ChromaDB built-in, 384-dim)",
     "faithfulness_threshold": 0.42,

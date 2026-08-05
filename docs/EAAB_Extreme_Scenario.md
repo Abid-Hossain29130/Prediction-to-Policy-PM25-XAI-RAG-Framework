@@ -8,63 +8,62 @@
 
 ---
 
-## Environmental Action Advisory Brief (EAAB) – Dhaka City  
-*Prepared for Dhaka City Planners – 24‑hour outlook*  
-
----
-
-### 1. Forecast Diagnostics & Precautionary Calibration  
-
-| Item | Value | Note |
-|------|-------|------|
-| Modelled 24‑h PM₂.₅ concentration | **195 µg/m³** | Direct output of the XGBoost forecast model. |
-| Bias‑adjusted (real‑world) PM₂.₅ estimate | **≈ 234 µg/m³** | Model under‑predicts by ~‑39 µg/m³ in extreme ranges (see bias warning). |
-| 3‑day rolling average (PM₂.₅) | **205 µg/m³** | Indicates sustained severe pollution. |
-| GRAP‑Dhaka stage | **PURPLE (Crisis – Severe risk)** | Highest alert tier in the regional grading system. |
-| Model bias warning | **⚠️ Systematic under‑prediction (‑39 µg/m³)** – treat forecasted values as a **conservative lower bound**. |  |
-
----
-
-### 2. Public Health Exposure Analysis  
-
-- **Attributable Fraction (AF) for acute cardiorespiratory risk:** **68.3 %**.  
-  *Plain‑English:* Roughly **68 out of every 100 people** exposed to today’s air will experience an elevated risk of acute heart or lung problems.  
-
-- **WHO AQG threshold exceeded:** The 24‑hour WHO guideline for PM₂.₅ is **15 µg/m³** (short‑term exposure)【WHO AQG 2021, Section 3.2.3, p. 82】.  
-  - Observed (bias‑adjusted) concentration (**≈ 234 µg/m³**) is **> 15 µg/m³** → **> 15‑fold** the WHO recommendation.  
-
-- **Bangladesh statutory limit:** 24‑hour PM₂.₅ limit is **65 µg/m³** (Schedule 1, APCR 2022). The forecast exceeds this limit by **≈ 3.6 ×**.
-
----
-
-### 3. Graded Operational Directives (Actions for the Next 24 h)
-
-| # | Action | Legal Basis (citation) |
-|---|--------|------------------------|
-| 1 | **Issue a city‑wide “Stay‑Indoors” public health alert and advise the public to limit outdoor activities** (including suspension of outdoor sports, markets, and street vending). | **APCR‑2022‑SRO, Rule 15(f), p. 12747** – mandates advisories to restrict public outdoor movement when pollution reaches an extremely unhealthy level. |
-| 2 | **Close all schools, colleges, and other educational institutions** until the next air‑quality bulletin. | **APCR‑2022‑SRO, Rule 15(f), p. 12747** – authorises closure of educational facilities under extreme pollution conditions. |
-| 3 | **Implement an emergency odd‑even vehicle restriction** for private cars and ban all heavy‑duty diesel trucks from entering the central business district. | **APCR‑2022‑SRO, Rule 15(e), p. 12747** – empowers the NCAPC to restrict operations of vehicles causing air pollution when levels are extremely unhealthy. |
-| 4 | **Order a temporary shutdown of high‑emission industrial units** (e.g., brick kilns, cement plants, and metal workshops) within the Dhaka airshed; require immediate activation of Best Practicable Means (BPM) controls. | **APCR‑2022‑SRO, Section 8, p. 12741** – obliges owners/occupiers to adopt BPM and control emissions that exceed standards. |
-| 5 | **Deploy additional portable air‑quality monitors** at high‑traffic and densely populated neighborhoods and publish real‑time PM₂.₅ data on the city portal. | **NAQMP‑2024‑2030, p. 28** – outlines the NCAPC’s mandate to establish monitoring and control systems as part of the national air‑quality management plan. |
-
-*All actions are to be enacted **immediately** (within the next 12 hours) and remain in force until the NCAPC issues a de‑escalation directive.*
-
----
-
-### 4. Policy Gap Report  
-
-| Driver | Governance Status | Why It Matters | International Reference |
-|--------|-------------------|----------------|--------------------------|
-| **pm2_5_mean** | ✅ **COVERED** | Directly regulated by Bangladesh’s PM₂.₅ ambient standards (24‑h ≤ 65 µg/m³) and triggers emergency powers under Rule 15(e/f). | WHO AQG 2021 – short‑term PM₂.₅ guideline (15 µg/m³)【WHO AQG 2021, Section 3.2.3, p. 82】 |
-| **blh_x_winter** (winter boundary‑layer height) | ⚠️ **GOVERNANCE GAP** | Low boundary‑layer height amplifies pollutant concentrations, yet the APCR/NAQMP contain **no specific directive** to monitor or mitigate this atmospheric driver. | WHO AQG 2021 – acknowledges meteorology as a modifier of exposure risk (general guidance). |
-| **wind_v_mean** (mean wind speed) | ✅ **COVERED** | Wind speed influences dispersion; the APCR‑2022 SRO includes provisions for “determining specific actions” (Rule 15(d)) that can be invoked when stagnant conditions exacerbate pollution. | WHO AQG 2021 – emphasizes the role of dispersion in exposure assessments. |
-| **aod_extinction** (aerosol optical depth) | ✅ **COVERED** | High AOD signals heavy aerosol loading; the NAQMP‑2024‑2030 executive summary (p. 4) cites AOD as a key indicator for degraded airshed declarations, supporting NCAPC action. | WHO AQG 2021 – uses satellite‑derived AOD as a supplemental monitoring tool. |
-
-**Interpretation of Gaps**  
-- The **blh_x_winter** gap reflects a regulatory silence: no clause in APCR or NAQMP mandates winter‑specific emission caps, forecasting adjustments, or public advisories tied to boundary‑layer dynamics.  
-- **Recommended adaptive protocol (NAQMP regulatory vacuum; adapted from regional GRAP precedents).** – The City should adopt a **Winter Boundary‑Layer Contingency Plan** (e.g., pre‑emptive emission reductions, enhanced indoor air‑filtration guidance) modeled on the Indian GRAP’s winter‑specific measures.
+**Environmental Action Advisory Brief (EAAB) – Dhaka City**  
+*Prepared for Dhaka City Planners – 3 August 2026*  
 
 ---  
 
-*Prepared by: Scientific Environmental Policy Advisory Team*  
-*Date: 5 July 2026*  
+## 1. Forecast Diagnostics & Precautionary Calibration  
+
+| Item | Value | Note |
+|------|-------|------|
+| Modelled 24‑h PM₂.₅ (T+24 h) | **195 µg/m³** | Direct output of the XGBoost forecast. |
+| Bias‑adjusted exposure estimate* | **≈ 234 µg/m³** | Model under‑predicts by ≈ 39 µg/m³ (mean bias = ‑39.27 µg/m³). Treat the lower‑bound 195 µg/m³ as a **conservative** figure. |
+| 3‑Day Rolling Average (PM₂.₅) | **205 µg/m³** | Indicates sustained extreme pollution. |
+| GRAP‑Dhaka Stage | **PURPLE (Crisis – Severe risk)** | Highest risk tier in the regional GRAP framework. |
+| Model‑bias warning | **⚠️** Systematic under‑prediction at extreme levels; real‑world concentrations may approach the bias‑adjusted value. | All operational directives are based on the conservative 195 µg/m³ figure. |
+
+\*Bias‑adjusted value is shown for situational awareness only; official actions reference the forecasted 195 µg/m³ (the legally‑recognised lower bound).  
+
+---  
+
+## 2. Public Health Exposure Analysis  
+
+- **Attributable Fraction (AF%) for acute cardiorespiratory risk:** **68.3 %**.  
+  *Plain‑English:* Roughly **68 out of every 100 people** exposed to today’s air would experience an acute cardiorespiratory event that can be linked to the pollution episode.  
+
+- **WHO AQG threshold exceeded:** The 24‑hour WHO guideline for PM₂.₅ is **15 µg/m³** (WHO AQG 2021). The forecasted 195 µg/m³ (and the bias‑adjusted 234 µg/m³) far exceed this limit.  
+
+  **Citation:** *WHO AQG 2021, “3.2.3 Recommended AQG level for short‑term exposure to PM₂.₅”, p. 82.*  
+
+---  
+
+## 3. Graded Operational Directives (Actions for Tomorrow)  
+
+| # | Action | Legal Basis (citation) |
+|---|--------|------------------------|
+| 1 | **Issue an emergency air‑quality alert and prohibit non‑essential outdoor movement** (public‑outdoor‑movement restriction). | **[APCR‑2022‑SRO, Rule 15, § ( f ), p. 12747]** – mandates advisories to restrict public outdoor movement when pollution reaches an “extremely unhealthy” level. |
+| 2 | **Temporarily close all schools, colleges and other educational institutions** in Dhaka. | **[APCR‑2022‑SRO, Rule 15, § ( f ), p. 12747]** – authorises closure of educational facilities under extreme‑unhealthy conditions. |
+| 3 | **Impose a city‑wide vehicular restriction (e.g., odd‑even licence‑plate scheme) and ban heavy‑duty diesel trucks from central zones** until concentrations fall below the “Extremely Unhealthy” trigger. | **[APCR‑2022‑SRO, Rule 15, § ( e ), p. 12747]** – directs restriction of vehicle operations when pollution is extremely unhealthy. |
+| 4 | **Order a temporary reduction in output or shutdown of identified high‑emitting industrial units** (e.g., brick kilns, cement plants) located within the most polluted airshed. | **[APCR‑2022‑SRO, Rule 15, § ( e ), p. 12747]** – permits limitation of industrial activities under the same trigger. |
+| 5 | **Deploy mobile air‑quality monitoring units to hotspot neighborhoods and publish real‑time data on the municipal portal** to improve exposure transparency. | *Recommended adaptive protocol (NAQMP regulatory vacuum; adapted from regional GRAP precedents).* – No explicit local provision for rapid‑deployment monitoring; therefore an adaptive measure is advised. |
+
+---  
+
+## 4. Policy Gap Report  
+
+| Driver | Governance Status | Why It Matters | International Reference |
+|--------|-------------------|----------------|--------------------------|
+| **pm2_5_mean** | ✅ **Covered** – NAQMP‑2024‑2030, Section 1, p. 12 (references PM₂.₅ standards and NCAPC mandate). | Provides the legal ceiling (24‑h 65 µg/m³, annual 35 µg/m³) and triggers for emergency actions; essential for health‑risk quantification. | WHO AQG 2021 (24‑h 15 µg/m³, annual 5 µg/m³). |
+| **blh_x_winter** (boundary‑layer height in winter) | ⚠️ **Governance Gap** – No clause in APCR 2022 or NAQMP 2024‑2030 addresses atmospheric stability drivers. | Low boundary‑layer height traps pollutants, amplifying exposure; without regulatory guidance, mitigation (e.g., vertical mixing incentives) cannot be mandated. | WHO AQG 2021 (recognises meteorology as exposure modifier); India GRAP (Chapter 4, “Winter Inversions”) – used as a precedent for adaptive protocols. |
+| **wind_v_mean** (mean wind speed) | ✅ **Covered** – APCR‑2022‑SRO, “THE BANGLADESH GAZETTE”, p. 12740 (general air‑quality management provisions include wind‑speed considerations for dispersion modelling). | Adequate wind disperses pollutants; low wind exacerbates concentrations; the rule’s monitoring‑control system can be invoked to trigger alerts. | WHO AQG 2021 (meteorological context in exposure assessments). |
+| **aod_extinction** (aerosol optical depth) | ✅ **Covered** – NAQMP‑2024‑2030, Executive Summary, p. 4 (high‑AOD identification as a degraded airshed indicator). | High AOD signals heavy particulate loading and is used to declare a “degraded airshed”, activating NCAPC emergency powers. | WHO AQG 2021 (links AOD to surface PM₂.₅ levels). |
+
+**Interpretation:**  
+- Three of the four key atmospheric drivers have explicit regulatory anchoring, enabling the NCAPC to invoke emergency measures when thresholds are breached.  
+- The **boundary‑layer height** gap leaves a critical meteorological lever unaddressed; planners should adopt an adaptive protocol (e.g., issue “inversion alerts” and tighten traffic/industrial restrictions during forecasted low‑BLH periods) while advocating for formal rule amendment.  
+
+---  
+
+*Prepared by the Scientific Environmental Policy Advisory Unit*  
+*All citations correspond to the retrieved legal and health corpus as stipulated.*
